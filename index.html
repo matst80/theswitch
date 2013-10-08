@@ -1,0 +1,824 @@
+﻿<!doctype html>
+<head>
+	
+
+
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="msapplication-tap-highlight" content="no">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  
+  <meta name="apple-mobile-web-app-status-bar-style" content="#3e7327">
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<title>Testweb</title>
+	<style>
+		@font-face{font-family:'elegant-icons';font-weight:normal;font-style:normal;src:url("/fonts/elegant-icons.woff") format("woff"),url("/fonts/elegant-icons.ttf") format("truetype")}
+
+		html, body {
+			padding: 0;
+			margin: 0;
+		}
+		.sym, .icon:after,.icon:before {
+			font-family: 'elegant-icons';
+		}
+		* {
+			box-sizing: border-box;
+		}
+		body {
+			background-color: #fefefe;
+			font: normal 10pt/13pt 'Roboto Condensed',HelveticaNeue, Helvetica, Sans-serif;
+			font-weight: 400;
+			-webkit-font-smoothing: subpixel-antialiased;
+			-webkit-user-select: none;
+			-webkit-tap-highlight-color: transparent;
+		}
+		
+		section.holder {
+			position: fixed;
+			top:45px;
+			bottom:48px;
+			left:0;
+			right:0;
+			overflow: hidden;
+			z-index: 1;
+		}
+		section.holder article {
+			opacity: 0;
+			padding-top:20px;
+			overflow-y:auto;
+			background-color: #efeff4;
+			width:100%;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+			z-index: 1;
+			position: absolute;
+			-webkit-transform: translate(30%,0);
+		}
+		section.holder article.hide {
+			opacity: 0;
+			-webkit-transform: translate(-30%,0);
+		}
+		section.holder article.active {
+			opacity: 1;
+			z-index: 2;
+			-webkit-transform: translate(0,0);
+		}
+		
+		nav {
+			height: 45px;
+			z-index: 3;
+			position: fixed;
+			text-align: center;
+			right:0;
+			left:0;
+			
+			padding: 0 15px;
+			background-color: #77b55a;
+			color:#fff;
+			box-shadow: 0 2px 1px #3e7327;
+			padding: 1px 0;
+		}
+		
+		footer {
+			height: 48px;
+			line-height: 48px;
+			background: #f8f8f8;
+			border-top: 1px solid #c8c8c8;
+			position: fixed;
+			
+			bottom:0;
+			left:0;
+			right:0;
+		}
+		footer a {
+			position: relative;
+float: left;
+padding-top: 30px;
+line-height: 18px;
+font-size: 11px;
+color: #7c7b83;
+text-align: center;
+		}
+		nav > h1 {
+			text-align: center;
+			font: normal 12pt/14pt 'Roboto Condensed',HelveticaNeue, Sans-serif;
+		}
+		ul {
+			list-style: none;
+			margin: 0 0 10px 0;
+			padding: 0;
+			border-top: solid 1px #c8c8c8;
+			background-color: #fff;
+			margin-bottom: 24px;
+		}	
+		ul > li {
+			padding: 0 !important;
+			position: relative;
+			margin: 0;
+		}
+		ul > li > a {
+			background-color: #fff;
+			font-size: 12pt;
+			text-decoration: none;
+			display: block;
+			color: #000;
+			padding: 15px 15px;
+			border-bottom: solid 1px #c8c8c8;
+		}
+		
+		h2 {
+			font: normal 11pt/12pt HelveticaNeue, Sans-serif;
+			color: #4d4d4d;
+			margin: 0 0 6px 15px;
+			text-transform: uppercase;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		} 
+		ul > li.on a {
+			background-image: url(light-bulb-5.svg);
+			background-repeat: no-repeat;
+			background-size: 24px 24px;
+			background-position: 10px center;
+			padding-left: 38px;
+		}
+		ul > li.nav::after {
+			content: '';
+			display: block;
+			height: 6px;
+			width: 6px;
+			border-right: solid 2px #c7c7cc;
+			border-top: solid 2px #c7c7cc;
+			-webkit-transform: rotate(45deg);
+			float: right;
+			position: relative;
+			top: -29px;
+			right: 15px;
+		}
+		.popup {
+			margin:0 auto;
+			z-index: 6;
+			display:none;
+			position: fixed;
+			top:50%;
+			left:50%;
+			width:80%;
+			 -webkit-transform: translate(-50%,-50%);
+			 background-color: #fff;
+			 box-shadow: 2px 2px 9px rgba(0,0,0,0.6);
+			 border-radius: 2px;
+			 
+		}
+		.options {
+			position: fixed;
+			top:0px;
+			right:0;
+			padding:10px;
+			background-color: #3e7327;
+			-webkit-transform-origin:100% 100%;
+			-webkit-transform: scale(10%);
+			z-index: 20;
+			opacity: 0;
+		}
+		.showoptions {
+			-webkit-transform: scale(100%);
+			opacity: 1;
+		}
+		.popup .content {
+			padding:10px;			
+		}
+		.popup .button {
+			width:50%;
+		}
+		.anifast, article {
+			transition: -webkit-transform .2s,opacity 0.2s ease-in, display 0;
+		}
+		.buttons {
+			
+			width:100%;
+			overflow: hidden;
+			border-top:solid 1px #ccc;;
+
+		}
+		.button {
+			padding:10px 10px;
+			text-align: center;
+			border-left:solid 1px #ccc;;
+			float:left;
+		}
+		.button:active {
+			background-color: #ddd;
+		}
+		.button:first-child {
+			border-left: 0;
+		}
+		.hidden {
+			
+			-webkit-transform: translate(-50%,-50%) scale(0.8,0.8);
+			opacity: 0;			
+		}
+		.btns {
+			position: absolute;
+			right:10px;
+			top:5px;
+		}
+
+    .btn {
+        
+        
+        -webkit-box-shadow:inset 0px -4px 0px -1px #3e7327;
+        box-shadow:inset 0px -4px 0px -1px #3e7327;
+        
+        background-color:#77b55a;
+        position: relative;
+        
+        -webkit-border-radius:6px;
+        border-radius:6px;
+        margin-left:10px;
+        cursor: pointer;
+        display:inline-block;
+        color:#ffffff;
+        font-weight: 600;
+        font-size:17px;
+        
+        padding:10px 22px;
+        text-decoration:none;
+        
+        text-shadow:1px 2px 1px #5b8a3c;
+        
+    }
+   
+    .btm:active {
+        position:relative;
+        background-color:#72b352;
+        top:1px;
+    }
+
+    .on .ton, .off .toff { opacity: 0.5; }
+
+a {
+	text-decoration: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+    
+    .toff {
+        
+        -moz-box-shadow:inset 0px -4px 0px -1px #1564ad;
+        -webkit-box-shadow:inset 0px -4px 0px -1px #1564ad;
+        box-shadow:inset 0px -4px 0px -1px #1564ad;
+        
+        background-color:#79bbff;
+        
+        
+        
+        text-shadow:1px 2px 1px #528ecc;
+        
+    }
+    
+    .toff:active {
+        background-color:#378de5;
+    }
+
+   .devid {
+   		
+display:inline-block;
+margin-left:6px;
+padding: 1px 5px;
+margin-top:-2px;
+font-size: 13px;
+color: white;
+background: #2087fc;
+border-radius: 2px
+   }
+   ul.hideul {
+   		max-height: 0;
+   		overflow: hidden;
+   		opacity: 0;
+   }
+
+   ul.openul {
+   		max-height: 300px;
+   		opacity: 1;	
+   		
+   }
+   .form {
+   		background-color: #fff;
+   		border-radius: 3px;
+   		margin:10px;
+   		padding:10px;
+   		border:solid 1px #eee;
+   }
+   
+   .form p {
+   	margin:0;
+   	padding:0;
+   	position: relative;
+   	border-bottom: 1px solid #e5e5eb;
+	
+   }
+   .form p:last-child {
+   	border-bottom:0;
+   }
+   select, input, label,option {
+   		-webkit-tap-highlight-color: rgba(0,0,0,0);
+   		font-size: 16px;
+   		padding:4px 4px;
+   		font: 200 16px 'Roboto Condensed',HelveticaNeue, Helvetica, Sans-serif;
+		-webkit-font-smoothing: antialiased;
+   }
+   .form select, .form input {
+		-webkit-appearance: none;
+		padding:7px 10px;
+		border:0;
+		width:70%;
+		background-color: transparent;
+		-webkit-rtl-ordering: logical;
+		-webkit-user-select: text;
+   }
+   .form select {
+   		padding-left: 7px;
+   }
+   .form label {
+   		display:inline-block;
+   		border:0;
+   		height: 21px;
+   		overflow: hidden;
+   		text-overflow:ellipsis;
+   		color:#7c7b83;
+   		width:28%;
+   }
+   nav span {
+			font-weight: 200;
+        	font-size:17px;
+		}
+		.topleft {
+			position: absolute;
+			left:10px;
+			top:12px;
+		}
+		.topright {
+			position: absolute;
+			right:10px;
+			top:12px;
+		}
+		
+		.select:after {
+content: '';
+display: block;
+height: 6px;
+width: 6px;
+border-right: solid 2px #c7c7cc;
+border-top: solid 2px #c7c7cc;
+-webkit-transform: rotate(135deg);
+float: right;
+position: relative;
+top: -26px;
+right: 15px;
+}
+.rbtn {
+	width: 23px;
+	height:23px;
+	position: absolute;
+	color: #fff;
+	font-size: 18px;
+	right:40px;
+	line-height: 22px;
+	text-align: center;
+	font-weight: 600;
+	text-overflow:ellipsis;
+	top:10px;
+	border-radius: 23px;
+	background-color: #77b55a;
+}
+.bottom-bar-link {
+	width:33%;
+}		
+
+.bottom-bar-link.active,.bottom-bar-link:active {
+color: #77b55a;
+}
+
+		.bottom-bar-link.icon-home:before {
+content: "\e009";
+margin-top: -20px;
+}
+.bottom-bar-link.icon-groups:before {
+content: "";
+margin-top: -20px;
+}
+.bottom-bar-link.icon-rooms:before {
+content: "";
+margin-top: -17px;
+}
+.bottom-bar-link:before {
+left: 0;
+right: 0;
+margin-top: -19px;
+font-size: 24px;
+}
+.top-bar-link:before, .bottom-bar-link:before, .search-bar:before, .menu-top-list-item:before, .list-link:after, .list-messsage-title:after, .form-select-row:after {
+position: absolute;
+top: 50%;
+margin-top: -.5em;
+text-align: center;
+}
+.top-bar-link:before, .bottom-bar-link:before, .search-bar:before, .menu-top-list-item:before, .list-link:after, .list-messsage-title:after, .form-select-row:after, .menu-nav-link:before, .list-row:after, .form-option-label:before, .form-row.valid:after, .form-row.invalid:after, .button:before, .action-sheet-icon-link:before {
+font-family: 'elegant-icons' !important;
+font-style: normal !important;
+font-weight: normal !important;
+font-variant: normal !important;
+text-transform: none !important;
+line-height: 1;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+
+		.btn:active {
+			box-shadow: 0 -1px -1px rgba(0,0,0,0.12);
+			border-color:#ddd;
+			-webkit-box-shadow: 0 -1px -1px rgba(0,0,0,0.12);						
+		}
+		.show {
+			
+			-webkit-transform: translate(-50%,-50%) scale(1,1);
+			opacity: 1;
+			display:block;
+		}
+		.addevice {
+
+		}
+	</style>
+</head>
+<body>
+	<nav><span class="topleft"><a id="goback">Back</a></span>
+		<h1>Webtest</h1><span class="topright"><a id="openOptions">Menu</a></span>
+	</nav>
+	
+		<section class="holder">
+			<article id='main' class="ismain">
+				<div class="options anifast">
+					hejsan
+				</div>
+				<h2>Devices</h2>
+				<ul id="devlist">
+					
+				</ul>
+				<div style="display:none">
+				<h2>Unknown</h2>
+				<ul id="unlist">
+					
+				</ul>
+				</div>
+			</article>
+			<article id='rooms' class="ismain">
+			<div class="options anifast">
+					hejsan
+				</div>
+				
+			
+			</article>
+			<article id='groups' class="ismain">
+			<div class="options anifast">
+					hejsan
+				</div>
+				
+			
+			</article>
+			<article id="viewdevice">
+				<div class="form">
+				<p>
+					<label>Name:</label>
+					<input placeholder="Name" data-field="vdevName">
+				</p>
+				<p>
+					<label>Description:</label>
+					<input placeholder="Description" data-field="vdevDescription">
+				</p>
+				<p>
+					<label>Protcol:</label>
+					<input placeholder="Protocol" data-field="vdevProtocol">
+				</p>
+				<p>
+					<label>Model:</label>
+					<input placeholder="Model" data-field="vdevModel">
+				</p>
+				<p class="select">
+					<label>Room:</label>
+					<select data-field="vdevRoomId" class="room-select">
+						<option id="0">Unassigned</option>
+					</select><span class="rbtn addRoom">+</span>
+				</p>
+				
+				</div>
+				<h2>Device log</h2>
+				<ul id="devlog">
+					<li><a>Loading log...</a></li>
+				</ul>
+
+			</article>
+		</section>
+	<section id="addRoom" class="popup hidden anifast">
+		<div class="content">
+		<input type="text" id="roomName" placeholder="Name" />
+		<input type="text" id="roomDescription" placeholder="Description" />
+		</div>
+		<div class="buttons">
+			<div id="saveroom" class="ok button">Save</div>
+			<div class="ok button closepopup">Cancel</div>
+		</div>
+	</section>
+	<section id="addDevice" class="popup hidden anifast">
+		<div class="content">
+		<label for="modelType">Type of controller</label>
+		<select id="modelType">
+			<option value="0">Switch</option>
+			<option value="1">Dimmer</option>
+		</select><br/>
+		
+		
+		<label for="manufacturer">Type of controller</label>
+		<select id="manufacturer">
+			<option value="nexa">Next</option>
+			<option value="proove">Proove</option>
+		</select><br/>
+		<input type="text" id="devName" placeholder="Name" />
+		</div>
+		<div class="buttons">
+			<div id="savedevice" class="ok button">Save</div>
+			<div class="ok button closepopup">Cancel</div>
+		</div>
+	</section>
+	<footer>
+		<section><a href="#main" class="bottom-bar-link icon-home">Devices</a></section>
+		<section><a href="#rooms" class="bottom-bar-link icon-rooms">Rooms</a></section>
+		<section><a href="#groups" class="bottom-bar-link icon-groups">Groups</a></section>
+	</footer>
+	<script type="text/javascript">
+
+		var baseUrl = '';
+
+		function call(func,data,cb) {
+			var cbname = ('tmpcb'+Math.random(Math.random()*10000)).replace('.','');
+			window[cbname] = cb;
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    		var qsdata = [];
+    		var qs = '';
+    		for(i in data)
+    		{
+    			qsdata.push(i+'='+data[i]);
+    		}
+    		var hasqs = qsdata.length;
+    		if(hasqs)
+    			qs = '?'+qsdata.join('&');
+    		ga.src = baseUrl+'/rest/'+func+qs+(hasqs?'&':'?')+'cb='+cbname;
+    		var s = document.getElementsByTagName('script')[0]; 
+    		s.parentNode.insertBefore(ga, s);
+		}
+
+		var lst = $('#devlist');//document.getElementById('devlist');
+		var unlst = $('#unlist');//document.getElementById('unlist');
+
+		$('.addRoom').click(function(e) {
+			$('#addRoom').addClass('show');
+			e.stopPropagation();
+		});
+
+		$('#saveroom').click(function() {
+			call('CreateRoom',{name:$('#roomName').val(),description:$('#roomDescription').val()});
+			$('.popup').removeClass('show');
+		});
+
+		$('#goback').click(function() {
+			window.history.back();
+		});
+
+		var rooms = [];
+			call('GetRooms',{},function(d) {
+				rooms = d;
+				var robj = $('.room-select').empty();
+				robj.append('<option value="0">-- Select room --</option>');
+				d.forEach(function(v) {
+					robj.append('<option value="'+v.Id+'">'+v.Name+'</option>');
+				});
+			});
+
+		var currentOptions;
+
+		$('#openOptions').click(function() {
+			currentOptions.toggleClass('showoptions');
+		});
+
+		function changeView(id,data)
+		{
+			if (currentOptions)
+				currentOptions.removeClass('showoptions');
+			var newview = $('#'+id);
+			var opt = currentOptions = newview.find('.options');
+			console.log(opt);
+			
+			$('#openOptions').toggle(!!opt.length);
+			if (newview.hasClass('ismain')) {
+				$('a.active').removeClass('active');
+				$('a[href="#'+id+'"]').addClass('active');
+			}
+			$('#goback').toggle(!newview.hasClass('ismain'));
+			if (newview && newview.length) {
+				
+				$('article.hide').removeClass('hide');
+				$('article.active').removeClass('active').addClass('hide');
+				newview.addClass('active').trigger('open',[data]);
+				/*setTimeout(function() {
+					$('article').not('.active');
+				},500);*/
+			}
+			//console.log(window.history,currentDevice);
+		}
+
+		function toggleNext() {
+			$(this).next().toggleClass('openul');
+		}
+		
+		$('#rooms').bind('open',function() {
+			var t = $(this).empty();
+			call('GetRooms',{},function(d) {
+				d.forEach(function(v) {
+					$('<h2/>').click(toggleNext).text(v.Name).appendTo(t);
+					var ul = $('<ul class="anifast hideul openul"/>').appendTo(t);
+
+					v.Devices.sort(nameSorter).forEach(function(v) {
+						createItem(v,ul);
+					});
+
+				});
+			});
+		});
+
+		$('#groups').bind('open',function() {
+			var t = $(this).empty();
+			call('GetGroups',{},function(d) {
+				d.forEach(function(v) {
+					$('<h2/>').click(toggleNext).text(v.Name).appendTo(t);
+					var ul = $('<ul class="anifast hideul openul" />').appendTo(t);
+					v.Devices.sort(nameSorter).forEach(function(v) {
+						createItem(v,ul);
+					});
+				});
+			});
+		});
+
+		var currentLogPage =0;
+
+		$('#viewdevice').bind('open',function() {
+			bindData(currentDevice,'vdev',function(prp,val,obj) {
+				call('SaveDevice',{key:prp,value:val,id:obj.Id},function() {
+
+				});
+			});
+			currentLogPage = 0;
+			var dlog = $('#devlog').empty();
+
+			var lastli = $('<li class="more"><a>More...</li>').appendTo(dlog);
+
+			function getLog() {
+				call('GetLog',{deviceId:currentDevice.Id,page:currentLogPage++},function(d) {
+					
+					d.forEach(function(v) {
+						//console.log(v);
+						var wd = new Date(parseInt(v.When.replace(/\/Date\((-?\d+)\)\//, '$1')));
+						$('<li class="nav '+(v.Method==1?'on':'off')+'"><a>'+wd+'</a></li>').insertBefore(lastli);
+					});
+				});
+			}
+			getLog();
+		});
+
+
+
+		function bindData(obj,pre,saveFunc) {
+			pre = pre||'';
+			$.each(obj,function(i,v) {
+				var prp = i;
+				$('*[data-field="'+(pre+i)+'"]').val(v).unbind('change').change(function() {
+					obj[prp] = $(this).val();
+					if (saveFunc)
+						saveFunc(prp,$(this).val(),obj);
+				});	
+			});
+		}
+		
+
+		$(window).on('hashchange', function() {
+			
+			changeView(window.location.hash.substring(1));
+
+		});
+
+		if (!window.location.hash || window.location.hash.length<2) {
+		 	window.location.hash='main';
+		}
+
+		changeView(window.location.hash.substring(1));
+
+		var unknownToAdd;
+
+		function createDevice(id)
+		{
+			$('#addDevice').addClass('show');
+			unknownToAdd = id;
+			//call('')
+
+		}
+
+		function turnOn(e)
+		{
+			call('TurnOn',{deviceId:$(this).parent().parent().data('id')},function() {
+				updateStatus();
+			});
+			e.stopPropagation();
+		}
+
+		function turnOff(e)
+		{
+			call('TurnOff',{deviceId:$(this).parent().parent().data('id')},function() {
+				updateStatus();
+			});	
+			e.stopPropagation();
+		}
+
+		$('body, .closepopup').click(function() {
+			$('.popup').removeClass('show');
+		});
+		$('#savedevice').click(function() {
+			call('CreateFromUnknown',{id:unknownToAdd,name:$('#devName').val(),type:$('#modelType').val(),})
+			$('.popup').removeClass('show');
+		});
+		
+		$('.popup').click(function(e) {
+			e.stopPropagation();
+		});
+
+		var currentDevice;
+
+		function createItem(v, parent) {
+			var li = $('<li data-id="'+v.Id+'" class="' + (v.LastCommand==1?'on':'off')+'" />').click(function() {
+				currentDevice = v;
+			}).appendTo(parent);
+			var a = $('<a href="#viewdevice">'+v.Name+'<span class="devid">'+v.Id+'</span></a>').appendTo(li);
+			var btns = $('<span class="btns" />').appendTo(li);
+			var on = $('<span class="btn ton anifast">On</a>').click(turnOn).appendTo(btns);
+			var off = $('<span class="btn toff anifast">Off</a>').click(turnOff).appendTo(btns);
+		}
+
+		function nameSorter(a,b) {
+			var nameA=a.Name.toLowerCase(), nameB=b.Name.toLowerCase()
+			if (nameA < nameB) //sort string ascending
+			 	return -1 
+			if (nameA > nameB)
+				return 1
+			return 0 
+		}
+
+		function updateStatus()
+		{
+			call('GetLastStatus',{},function(d) {
+				d.forEach(function(v) {
+					var li = $('li[data-id="'+v.Id+'"]');
+					li.removeClass('on').removeClass('off').addClass((v.LastCommand==1?'on':'off'));
+				});
+			});
+		}
+		var allDevices = [];
+		setInterval(updateStatus,5000);
+		call('GetDevices',{},function(d) {
+			
+			allDevices = d.sort(nameSorter);
+			allDevices.forEach(function(v) {
+				createItem(v,lst);
+			});
+		});
+		call('GetUnknownDevices',{},function(d) {
+			d.forEach(function(v) {
+				var li = $('<li data-id="'+v.Id+'" class="nav ' + (v.LastCommand==1?'on':'off')+'" />').appendTo(unlst);
+				
+				li.click(function(e) {
+					createDevice($(this).data('id'));
+					e.stopPropagation();
+				});
+				var when = Math.round((new Date().getTime()-new Date(parseInt(v.When.replace(/\/Date\((-?\d+)\)\//, '$1'))).getTime())/60000);
+				var a = $('<a href="#">'+v.Params.Protocol+', '+when+'min</a>').appendTo(li);
+
+			});
+		});
+	</script>
+	
+</body>
+</html>
+
+
+
+
