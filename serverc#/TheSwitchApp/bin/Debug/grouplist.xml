@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<ArrayOfDeviceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DeviceGroup>
+    <Id>1</Id>
+    <Name>Night</Name>
+    <DeviceIds>
+      <int>3</int>
+    </DeviceIds>
+  </DeviceGroup>
+  <DeviceGroup>
+    <Id>2</Id>
+    <Name>Evening</Name>
+    <DeviceIds>
+      <int>3</int>
+    </DeviceIds>
+  </DeviceGroup>
+  <DeviceGroup>
+    <Id>4</Id>
+    <Name>Morning</Name>
+    <DeviceIds>
+      <int>3</int>
+    </DeviceIds>
+  </DeviceGroup>
+</ArrayOfDeviceGroup>

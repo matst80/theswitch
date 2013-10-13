@@ -1,0 +1,13 @@
+c:\users\mattan\documents\visual studio 2013\Projects\TheSwitch\TheSwitch\bin\Debug\TheSwitch.exe.config
+c:\users\mattan\documents\visual studio 2013\Projects\TheSwitch\TheSwitch\bin\Debug\TheSwitch.exe
+c:\users\mattan\documents\visual studio 2013\Projects\TheSwitch\TheSwitch\bin\Debug\TheSwitch.pdb
+c:\users\mattan\documents\visual studio 2013\Projects\TheSwitch\TheSwitch\bin\Debug\TelldusNETWrapper.dll
+c:\users\mattan\documents\visual studio 2013\Projects\TheSwitch\TheSwitch\obj\Debug\TheSwitch.csprojResolveAssemblyReference.cache
+c:\users\mattan\documents\visual studio 2013\Projects\TheSwitch\TheSwitch\obj\Debug\TheSwitch.exe
+c:\users\mattan\documents\visual studio 2013\Projects\TheSwitch\TheSwitch\obj\Debug\TheSwitch.pdb
+C:\Users\mattan\documents\visual studio 2013\Projects\TheSwitch\TheSwitch\bin\Debug\TSCore.dll
+C:\Users\mattan\documents\visual studio 2013\Projects\TheSwitch\TheSwitch\bin\Debug\TSServer.dll
+C:\Users\mattan\documents\visual studio 2013\Projects\TheSwitch\TheSwitch\bin\Debug\TSCore.pdb
+C:\Users\mattan\documents\visual studio 2013\Projects\TheSwitch\TheSwitch\bin\Debug\TSServer.pdb
+C:\Users\mattan\documents\visual studio 2013\Projects\TheSwitch\TheSwitch\bin\Debug\ScheduleTimer.dll
+C:\Users\mattan\documents\visual studio 2013\Projects\TheSwitch\TheSwitch\bin\Debug\ScheduleTimer.pdb

@@ -1,0 +1,17 @@
+C:\Users\mattan\documents\visual studio 2013\Projects\TheSwitch\TheSwitchApp\bin\Debug\TheSwitchApp.exe.config
+C:\Users\mattan\documents\visual studio 2013\Projects\TheSwitch\TheSwitchApp\bin\Debug\TheSwitchApp.exe
+C:\Users\mattan\documents\visual studio 2013\Projects\TheSwitch\TheSwitchApp\bin\Debug\TheSwitchApp.pdb
+C:\Users\mattan\documents\visual studio 2013\Projects\TheSwitch\TheSwitchApp\bin\Debug\TSCore.dll
+C:\Users\mattan\documents\visual studio 2013\Projects\TheSwitch\TheSwitchApp\bin\Debug\TSServer.dll
+C:\Users\mattan\documents\visual studio 2013\Projects\TheSwitch\TheSwitchApp\bin\Debug\TelldusNETWrapper.dll
+C:\Users\mattan\documents\visual studio 2013\Projects\TheSwitch\TheSwitchApp\bin\Debug\TSCore.pdb
+C:\Users\mattan\documents\visual studio 2013\Projects\TheSwitch\TheSwitchApp\bin\Debug\TSServer.pdb
+C:\Users\mattan\documents\visual studio 2013\Projects\TheSwitch\TheSwitchApp\obj\Debug\TheSwitchApp.csprojResolveAssemblyReference.cache
+C:\Users\mattan\documents\visual studio 2013\Projects\TheSwitch\TheSwitchApp\obj\Debug\TheSwitchApp.Form1.resources
+C:\Users\mattan\documents\visual studio 2013\Projects\TheSwitch\TheSwitchApp\obj\Debug\TheSwitchApp.Properties.Resources.resources
+C:\Users\mattan\documents\visual studio 2013\Projects\TheSwitch\TheSwitchApp\obj\Debug\TheSwitchApp.csproj.GenerateResource.Cache
+C:\Users\mattan\documents\visual studio 2013\Projects\TheSwitch\TheSwitchApp\obj\Debug\TheSwitchApp.exe
+C:\Users\mattan\documents\visual studio 2013\Projects\TheSwitch\TheSwitchApp\obj\Debug\TheSwitchApp.pdb
+C:\Users\mattan\documents\visual studio 2013\Projects\TheSwitch\TheSwitchApp\obj\Debug\TheSwitchApp.Translations.resources
+C:\Users\mattan\documents\visual studio 2013\Projects\TheSwitch\TheSwitchApp\bin\Debug\ScheduleTimer.dll
+C:\Users\mattan\documents\visual studio 2013\Projects\TheSwitch\TheSwitchApp\bin\Debug\ScheduleTimer.pdb

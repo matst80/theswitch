@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<DeviceLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Events>
+    <DeviceEvent>
+      <When>0001-01-01T00:00:00</When>
+      <Method>1</Method>
+      <Data>Online</Data>
+    </DeviceEvent>
+    <DeviceEvent>
+      <When>0001-01-01T00:00:00</When>
+      <Method>2</Method>
+      <Data>Online</Data>
+    </DeviceEvent>
+    <DeviceEvent>
+      <When>2013-10-06T16:52:36.7947758+02:00</When>
+      <Method>1</Method>
+    </DeviceEvent>
+    <DeviceEvent>
+      <When>2013-10-06T16:52:39.8621101+02:00</When>
+      <Method>2</Method>
+    </DeviceEvent>
+    <DeviceEvent>
+      <When>2013-10-06T16:52:41.8525414+02:00</When>
+      <Method>1</Method>
+    </DeviceEvent>
+    <DeviceEvent>
+      <When>2013-10-06T16:52:47.046612+02:00</When>
+      <Method>2</Method>
+    </DeviceEvent>
+  </Events>
+</DeviceLog>

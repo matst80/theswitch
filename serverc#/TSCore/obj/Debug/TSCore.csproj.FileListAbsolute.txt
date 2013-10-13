@@ -1,0 +1,8 @@
+C:\Users\mattan\documents\visual studio 2013\Projects\TheSwitch\TSCore\bin\Debug\TSCore.dll
+C:\Users\mattan\documents\visual studio 2013\Projects\TheSwitch\TSCore\bin\Debug\TSCore.pdb
+C:\Users\mattan\documents\visual studio 2013\Projects\TheSwitch\TSCore\bin\Debug\TelldusNETWrapper.dll
+C:\Users\mattan\documents\visual studio 2013\Projects\TheSwitch\TSCore\obj\Debug\TSCore.dll
+C:\Users\mattan\documents\visual studio 2013\Projects\TheSwitch\TSCore\obj\Debug\TSCore.pdb
+C:\Users\mattan\documents\visual studio 2013\Projects\TheSwitch\TSCore\obj\Debug\TSCore.csprojResolveAssemblyReference.cache
+C:\Users\mattan\documents\visual studio 2013\Projects\TheSwitch\TSCore\bin\Debug\ScheduleTimer.dll
+C:\Users\mattan\documents\visual studio 2013\Projects\TheSwitch\TSCore\bin\Debug\ScheduleTimer.pdb

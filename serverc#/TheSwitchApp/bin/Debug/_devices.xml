@@ -1,0 +1,211 @@
+<?xml version="1.0"?>
+<ArrayOfTelldusDevice xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TelldusDevice>
+    <LastValue />
+    <Id>3</Id>
+    <LastCommand>1</LastCommand>
+    <Name>Datorn</Name>
+    <RoomId>0</RoomId>
+    <Description>Datorn i källarn</Description>
+    <Protocol>arctech</Protocol>
+    <Model>selflearning-switch:proove</Model>
+  </TelldusDevice>
+  <TelldusDevice>
+    <LastValue>0</LastValue>
+    <Id>31</Id>
+    <LastCommand>2</LastCommand>
+    <Name>Matbordet</Name>
+    <RoomId>0</RoomId>
+    <Protocol>arctech</Protocol>
+    <Model>selflearning-switch:proove</Model>
+  </TelldusDevice>
+  <TelldusDevice>
+    <LastValue>0</LastValue>
+    <Id>39</Id>
+    <LastCommand>2</LastCommand>
+    <Name>Jacks bollar</Name>
+    <RoomId>0</RoomId>
+    <Protocol>arctech</Protocol>
+    <Model>codeswitch:proove</Model>
+  </TelldusDevice>
+  <TelldusDevice>
+    <LastValue>0</LastValue>
+    <Id>40</Id>
+    <LastCommand>2</LastCommand>
+    <Name>Lampan på byrån</Name>
+    <RoomId>0</RoomId>
+    <Protocol>sartano</Protocol>
+    <Model>codeswitch:rusta</Model>
+  </TelldusDevice>
+  <TelldusDevice>
+    <LastValue>0</LastValue>
+    <Id>41</Id>
+    <LastCommand>2</LastCommand>
+    <Name>TV Lampan</Name>
+    <RoomId>0</RoomId>
+    <Protocol>arctech</Protocol>
+    <Model>codeswitch:proove</Model>
+  </TelldusDevice>
+  <TelldusDevice>
+    <LastValue>0</LastValue>
+    <Id>42</Id>
+    <LastCommand>2</LastCommand>
+    <Name>Rusta dimmer</Name>
+    <RoomId>0</RoomId>
+    <Protocol>sartano</Protocol>
+    <Model>codeswitch:rusta</Model>
+  </TelldusDevice>
+  <TelldusDevice>
+    <LastValue>0</LastValue>
+    <Id>43</Id>
+    <LastCommand>2</LastCommand>
+    <Name>Lampan i hallen</Name>
+    <RoomId>0</RoomId>
+    <Protocol>sartano</Protocol>
+    <Model>codeswitch:rusta</Model>
+  </TelldusDevice>
+  <TelldusDevice>
+    <LastValue>0</LastValue>
+    <Id>44</Id>
+    <LastCommand>2</LastCommand>
+    <Name>Pelar lampan uppe</Name>
+    <RoomId>0</RoomId>
+    <Protocol>sartano</Protocol>
+    <Model>codeswitch:rusta</Model>
+  </TelldusDevice>
+  <TelldusDevice>
+    <LastValue>0</LastValue>
+    <Id>45</Id>
+    <LastCommand>2</LastCommand>
+    <Name>Sovrummet vid stolen</Name>
+    <RoomId>0</RoomId>
+    <Protocol>arctech</Protocol>
+    <Model>codeswitch:proove</Model>
+  </TelldusDevice>
+  <TelldusDevice>
+    <LastValue />
+    <Id>46</Id>
+    <LastCommand>2</LastCommand>
+    <Name>AA5</Name>
+    <RoomId>0</RoomId>
+    <Protocol>sartano</Protocol>
+    <Model>codeswitch:rusta</Model>
+  </TelldusDevice>
+  <TelldusDevice>
+    <LastValue>0</LastValue>
+    <Id>47</Id>
+    <LastCommand>2</LastCommand>
+    <Name>Sovrummet vid kläderna</Name>
+    <RoomId>0</RoomId>
+    <Protocol>arctech</Protocol>
+    <Model>codeswitch:proove</Model>
+  </TelldusDevice>
+  <TelldusDevice>
+    <LastValue>0</LastValue>
+    <Id>48</Id>
+    <LastCommand>2</LastCommand>
+    <Name>Tetrislampan</Name>
+    <RoomId>0</RoomId>
+    <Protocol>sartano</Protocol>
+    <Model>codeswitch:rusta</Model>
+  </TelldusDevice>
+  <TelldusDevice>
+    <LastValue>0</LastValue>
+    <Id>49</Id>
+    <LastCommand>2</LastCommand>
+    <Name>Fönsterlampa Todd</Name>
+    <RoomId>0</RoomId>
+    <Protocol>sartano</Protocol>
+    <Model>codeswitch:rusta</Model>
+  </TelldusDevice>
+  <TelldusDevice>
+    <LastValue>0</LastValue>
+    <Id>50</Id>
+    <LastCommand>2</LastCommand>
+    <Name>Källarhallen</Name>
+    <RoomId>0</RoomId>
+    <Protocol>sartano</Protocol>
+    <Model>codeswitch:rusta</Model>
+  </TelldusDevice>
+  <TelldusDevice>
+    <LastValue>0</LastValue>
+    <Id>51</Id>
+    <LastCommand>2</LastCommand>
+    <Name>Bollen i vardagsrummet</Name>
+    <RoomId>0</RoomId>
+    <Protocol>comen</Protocol>
+    <Model>selflearning-switch:jula</Model>
+  </TelldusDevice>
+  <TelldusDevice>
+    <LastValue>0</LastValue>
+    <Id>52</Id>
+    <LastCommand>2</LastCommand>
+    <Name>Jacks myslampan</Name>
+    <RoomId>0</RoomId>
+    <Protocol>comen</Protocol>
+    <Model>selflearning-switch:jula</Model>
+  </TelldusDevice>
+  <TelldusDevice>
+    <LastValue>0</LastValue>
+    <Id>53</Id>
+    <LastCommand>2</LastCommand>
+    <Name>Blomman i borgen</Name>
+    <RoomId>0</RoomId>
+    <Protocol>comen</Protocol>
+    <Model>selflearning-switch:jula</Model>
+  </TelldusDevice>
+  <TelldusDevice>
+    <LastValue>0</LastValue>
+    <Id>54</Id>
+    <LastCommand>2</LastCommand>
+    <Name>Nattlampa</Name>
+    <RoomId>0</RoomId>
+    <Protocol>comen</Protocol>
+    <Model>selflearning-switch:jula</Model>
+  </TelldusDevice>
+  <TelldusDevice>
+    <LastValue>0</LastValue>
+    <Id>55</Id>
+    <LastCommand>2</LastCommand>
+    <Name>Annas sänglampa</Name>
+    <RoomId>0</RoomId>
+    <Protocol>comen</Protocol>
+    <Model>selflearning-switch:jula</Model>
+  </TelldusDevice>
+  <TelldusDevice>
+    <LastValue>0</LastValue>
+    <Id>56</Id>
+    <LastCommand>2</LastCommand>
+    <Name>Bio lampan</Name>
+    <RoomId>0</RoomId>
+    <Protocol>comen</Protocol>
+    <Model>selflearning-switch:jula</Model>
+  </TelldusDevice>
+  <TelldusDevice>
+    <LastValue>0</LastValue>
+    <Id>57</Id>
+    <LastCommand>2</LastCommand>
+    <Name>Lampa köket</Name>
+    <RoomId>0</RoomId>
+    <Protocol>arctech</Protocol>
+    <Model>selflearning-switch:proove</Model>
+  </TelldusDevice>
+  <TelldusDevice>
+    <LastValue>0</LastValue>
+    <Id>58</Id>
+    <LastCommand>2</LastCommand>
+    <Name>Kökslampa 2</Name>
+    <RoomId>0</RoomId>
+    <Protocol>arctech</Protocol>
+    <Model>selflearning-switch:proove</Model>
+  </TelldusDevice>
+  <TelldusDevice>
+    <LastValue>0</LastValue>
+    <Id>59</Id>
+    <LastCommand>2</LastCommand>
+    <Name>Köksön</Name>
+    <RoomId>0</RoomId>
+    <Protocol>arctech</Protocol>
+    <Model>selflearning-switch:proove</Model>
+  </TelldusDevice>
+</ArrayOfTelldusDevice>
